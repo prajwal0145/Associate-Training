@@ -1,0 +1,9 @@
+--- Student Report ---
+Name: Prajwal, Age: 22
+Marks:
+  - Math: 90 (PASS)
+  - Physics: 70 (PASS)
+  - Chemistry: 84 (PASS)
+Average: 81.33, Overall Status: PASS
+----------------------
+
