@@ -2,15 +2,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- * Data Access Object for Transaction operations.
- * Demonstrates JDBC transaction management (commit/rollback).
- */
+
 public class TransactionDAO {
 
-    /**
-     * Records a new transaction and updates product stock within a database transaction.
-     */
+
     public void recordTransaction(int productId, String transactionType, int quantity) {
         Connection conn = null;
         try {
@@ -26,7 +21,7 @@ public class TransactionDAO {
                 throw new SQLException("Product with ID " + productId + " not found.");
             }
 
-            // Calculate new stock
+
             int newStock = product.getStockQuantity();
             if ("OUT".equalsIgnoreCase(transactionType)) {
                 if (newStock < quantity) {
@@ -39,29 +34,29 @@ public class TransactionDAO {
                 throw new SQLException("Invalid transaction type. Must be 'IN' or 'OUT'.");
             }
 
-            // --- First SQL command in transaction: Update product stock ---
+
             String updateStockSql = "UPDATE products SET stock_quantity = ? WHERE product_id = ?";
-            // Using try-with-resources here for clarity within the larger transaction block
+
             try (PreparedStatement updatePstmt = conn.prepareStatement(updateStockSql)) {
-                // 2. Create statement (handled by try-with-resources)
+
                 updatePstmt.setInt(1, newStock);
                 updatePstmt.setInt(2, productId);
-                // 3. Execute query
+
                 updatePstmt.executeUpdate();
             }
 
-            // --- Second SQL command in transaction: Record the transaction ---
+
             String insertTransactionSql = "INSERT INTO transactions (product_id, transaction_type, quantity) VALUES (?, ?, ?)";
             try (PreparedStatement insertPstmt = conn.prepareStatement(insertTransactionSql)) {
-                // 2. Create statement
+
                 insertPstmt.setInt(1, productId);
                 insertPstmt.setString(2, transactionType);
                 insertPstmt.setInt(3, quantity);
-                // 3. Execute query
+
                 insertPstmt.executeUpdate();
             }
 
-            // If all steps are successful, commit the changes
+
             conn.commit();
             System.out.println("Transaction recorded successfully.");
 
@@ -69,7 +64,7 @@ public class TransactionDAO {
             System.err.println("Transaction failed: " + e.getMessage());
             if (conn != null) {
                 try {
-                    // If any error occurs, roll back all changes made in this transaction
+
                     System.err.println("Rolling back transaction...");
                     conn.rollback();
                     System.err.println("Transaction rolled back successfully.");
@@ -80,12 +75,12 @@ public class TransactionDAO {
         } finally {
             if (conn != null) {
                 try {
-                    // Reset connection to its default auto-commit behavior
+
                     conn.setAutoCommit(true);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                // Finally, close the connection
+
                 DatabaseManager.closeConnection(conn);
             }
         }

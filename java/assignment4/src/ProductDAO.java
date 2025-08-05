@@ -2,15 +2,10 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data Access Object for Product operations.
- * This version explicitly shows the 4 steps of JDBC and uses manual resource management.
- */
+
 public class ProductDAO {
 
-    /**
-     * Adds a new product to the database.
-     */
+
     public void addProduct(Product product) {
         String sql = "INSERT INTO products (product_name, category_id, price, stock_quantity) VALUES (?, ?, ?, ?)";
         Connection conn = null;
@@ -36,7 +31,7 @@ public class ProductDAO {
         } catch (SQLException e) {
             System.err.println("Error adding product: " + e.getMessage());
         } finally {
-            // Ensure resources are closed to prevent leaks
+
             try {
                 if (pstmt != null) pstmt.close();
             } catch (SQLException e) { e.printStackTrace(); }
@@ -44,9 +39,7 @@ public class ProductDAO {
         }
     }
 
-    /**
-     * Retrieves a product by its ID.
-     */
+
     public Product getProductById(int productId) {
         String sql = "SELECT * FROM products WHERE product_id = ?";
         Connection conn = null;
@@ -77,7 +70,7 @@ public class ProductDAO {
         } catch (SQLException e) {
             System.err.println("Error getting product: " + e.getMessage());
         } finally {
-            // Ensure resources are closed to prevent leaks
+
             try {
                 if (rs != null) rs.close();
                 if (pstmt != null) pstmt.close();
@@ -87,9 +80,7 @@ public class ProductDAO {
         return product;
     }
 
-    /**
-     * Updates an existing product.
-     */
+
     public void updateProduct(Product product) {
         String sql = "UPDATE products SET product_name = ?, category_id = ?, price = ?, stock_quantity = ? WHERE product_id = ?";
         Connection conn = null;

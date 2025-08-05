@@ -2,9 +2,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Data Access Object for Category operations.
- */
+
 public class CategoryDAO {
     public List<Category> getAllCategories() {
         List<Category> categories = new ArrayList<>();
@@ -30,7 +28,7 @@ public class CategoryDAO {
         } catch (SQLException e) {
             System.err.println("Error fetching categories: " + e.getMessage());
         } finally {
-            // Ensure resources are closed to prevent leaks
+
             try {
                 if (rs != null) rs.close();
                 if (stmt != null) stmt.close();

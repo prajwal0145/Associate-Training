@@ -6,7 +6,7 @@ public class Product {
     private double price;
     private int stockQuantity;
 
-    // Constructors, Getters, and Setters
+
     public Product() {}
 
     public int getProductId() { return productId; }

@@ -5,7 +5,7 @@ public class Transaction {
     private int quantity;
     private java.sql.Timestamp transactionDate;
 
-    // Getters and Setters
+
     public int getTransactionId() { return transactionId; }
     public void setTransactionId(int transactionId) { this.transactionId = transactionId; }
     public int getProductId() { return productId; }

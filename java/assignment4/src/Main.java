@@ -2,10 +2,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Main class for the Store Inventory Management application.
- * This is the entry point of the program and handles user interaction.
- */
+
 public class Main{
 
     private static final ProductDAO productDAO = new ProductDAO();
@@ -41,14 +38,14 @@ public class Main{
                         break;
                     case 7:
                         System.out.println("Exiting application.");
-                        scanner.close(); // Close the scanner to prevent resource leaks
+                        scanner.close();
                         return;
                     default:
                         System.out.println("Invalid choice. Please enter a number between 1 and 7.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
-                scanner.nextLine(); // clear the invalid input from the scanner
+                scanner.nextLine();
             }
         }
     }
@@ -80,12 +77,12 @@ public class Main{
 
             System.out.print("Enter Stock Quantity: ");
             product.setStockQuantity(scanner.nextInt());
-            scanner.nextLine(); // consume newline
+            scanner.nextLine();
 
             productDAO.addProduct(product);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input type. Please check your entries and try again.");
-            scanner.nextLine(); // clear the invalid input
+            scanner.nextLine();
         }
     }
 
@@ -115,11 +112,11 @@ public class Main{
             product.setStockQuantity(scanner.nextInt());
             scanner.nextLine();
 
-            product.setProductId(productId); // Ensure the product ID is set for the update
+            product.setProductId(productId);
             productDAO.updateProduct(product);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input type. Please check your entries and try again.");
-            scanner.nextLine(); // clear the invalid input
+            scanner.nextLine();
         }
     }
 
@@ -131,7 +128,7 @@ public class Main{
             productDAO.deleteProduct(productId);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input type. Please enter a number.");
-            scanner.nextLine(); // clear the invalid input
+            scanner.nextLine();
         }
     }
 
@@ -154,7 +151,7 @@ public class Main{
             }
         } catch (InputMismatchException e) {
             System.out.println("Invalid input type. Please enter numbers.");
-            scanner.nextLine(); // clear the invalid input
+            scanner.nextLine();
         }
     }
 
@@ -183,7 +180,7 @@ public class Main{
             transactionDAO.recordTransaction(productId, type, quantity);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input type. Please check your entries and try again.");
-            scanner.nextLine(); // clear the invalid input
+            scanner.nextLine();
         }
     }
 
