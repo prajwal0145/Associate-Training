@@ -1,0 +1,14 @@
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/controller/PostController.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/controller/UserController.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/service/UserService.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/repository/CommentRepository.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/BloggingPlatformApplication.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/service/CommentService.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/controller/AuthController.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/model/Comment.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/model/Post.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/repository/PostRepository.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/repository/UserRepository.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/controller/CommentController.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/service/PostService.java
+/home/prajwald/Documents/Associate-Training/java/assignment6/blogging-platform/src/main/java/com/example/bloggingplatform/model/User.java
