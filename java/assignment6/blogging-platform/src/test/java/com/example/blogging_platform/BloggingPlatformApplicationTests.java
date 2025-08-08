@@ -11,3 +11,6 @@ class BloggingPlatformApplicationTests {
 	}
 
 }
+
+
+
